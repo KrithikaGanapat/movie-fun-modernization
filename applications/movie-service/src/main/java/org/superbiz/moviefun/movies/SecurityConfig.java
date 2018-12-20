@@ -16,6 +16,6 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().anyRequest().authenticated();
+        http.authorizeRequests().anyRequest().permitAll().and().csrf().disable();
     }
 }
